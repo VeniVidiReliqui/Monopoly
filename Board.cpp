@@ -34,6 +34,7 @@ Board::Board(int numPlayers,int num){
   createCommunityCards();
   createChanceCards();
 
+  //refactor so it's not hardcoded
   property_names.push_back("Go");
   property_names.push_back("Mediterranean Avenue");
   property_names.push_back("Community Chest");
@@ -85,6 +86,7 @@ void Board::playGame(){
   cout << "Num Players: " << numberPlayers << " Turns: " << numTurns << endl;
   cout << "Verbose: " << verbose << endl;
   }
+
   for (int i = 0; i < numTurns; i++){
     this->playOneTurn(numberPlayers,i+1);
   }
@@ -141,6 +143,7 @@ void Board::takeJailTurn(Player& player){
 
     return;
   }
+  
   if (player.jailCardChest == true){
     player.useJailCardChest();
     player.outOfJail();

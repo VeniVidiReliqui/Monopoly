@@ -1,14 +1,15 @@
-#include<iostream>
-#include<string>
-#include<vector>
-#include<time.h>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include<Board.h>
-#include<Player.h>
+#include <Board.h>
+#include <Player.h>
 
 using namespace std;
 
+//expects arguments: numPlayers numTurns
 int main(int argc, char* argv[]){
 
   int numPlayers = atoi(argv[1]);
@@ -17,9 +18,9 @@ int main(int argc, char* argv[]){
   Board t(numPlayers,numTurns);
 
   //seed rand
-  if (argc>=4){
+  if (argc >= 4){
     t.setSeed(atoi(argv[3]));
-    if (argc>=5){
+    if (argc >= 5){
       t.makeVerbose();
     }
   }
